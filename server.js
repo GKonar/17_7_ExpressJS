@@ -1,7 +1,7 @@
-var express = require('express');
-var passport = require('passport');
+var express = require('express'); //przechowuje funkcjonalosc pakietu ekspresa
+var passport = require('passport'); //przechowuje funkcjonalosc pakietu passport
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-var config = require('./config');
+var config = require('./config'); // do zmiennej config mamy przypisany plik config.js
 var app = express();
 var googleProfile = {};
 
@@ -31,7 +31,7 @@ passport.use(new GoogleStrategy({
     }
 ));
 
-//app routes
+//app routes, endpointy do aplikacji
 app.get('/', function(req, res){
     res.render('index', { name:'Aplikacja do logowania', user: req.user });
 });
